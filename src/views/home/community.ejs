@@ -1,0 +1,59 @@
+<%- include('../partials/header', { title: '커뮤니티-지식on대진' }) %>
+
+        <main id="container" class="container">
+            <section id="content" class="content">
+                <header class="tit-area">
+                    <h1 class="tit-type1">커뮤니티</h1>
+                </header>
+
+                <div class="swiper tab type1">
+                    <div class="swiper-wrapper">
+                        <a href="/notice" class="swiper-slide current"><span class="txt">공지사항</span></a>
+                        <a href="/document" class="swiper-slide"><span class="txt">자료실</span></a>
+                        <a href="/share" class="swiper-slide"><span class="txt">주제공유</span></a>
+                    </div>
+                </div>
+
+                <div class="search-area">
+                    <fieldset class="form-area">
+                        <legend>공지사항 검색어 입력</legend>
+                        <select class="select" id="searchtype" name="searchtype">
+                            <option value="CONTENT_TITLE" selected="selected">전체</option>
+                            <option value="TITLE">제목</option>
+                            <option value="CONTENT">내용</option>
+                        </select>
+                        <input type="text" class="input" id="searchtxt" name="searchtxt" placeholder="검색어 입력" onkeypress="if(event.key === 'Enter') { fncSearch(); }">
+                        <button type="button" class="btn" onclick="fncSearch();">검색</button>
+                    </fieldset>
+                </div>
+
+                <table class="board-list">
+                    <caption>공지사항에 대한 번호, 제목, 등록일 안내 리스트입니다.</caption>
+                    <thead>
+                        <tr>
+                            <th class="list-num">번호</th>
+                            <th class="list-tit">제목</th>
+                            <th class="list-date">등록일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (notices && notices.length > 0) { %>
+                            <% notices.forEach((notice, index) => { %>
+                                <tr>
+                                    <td class="list-num"><%= index + 1 %></td>
+                                    <td class="list-tit"><a href="<%= notice.url %>"><%= notice.title %></a></td>
+                                    <td class="list-date"><%= notice.date %></td>
+                                </tr>
+                            <% }) %>
+                        <% } else { %>
+                            <tr>
+                                <td colspan="3">공지사항이 없습니다.</td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+<%- include('../partials/footer') %>
+        
