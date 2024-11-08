@@ -3,10 +3,11 @@
 
 // 모듈
 const express = require("express");
-const app = express();
 const bodyParser = require('body-parser');
 const boardRoutes = require('./routes/board');
 const session = require('express-session');
+
+const app = express();
 
 // 라우팅
 const home = require("./src/routes/home"); //home에 있는 js파일 읽기.
