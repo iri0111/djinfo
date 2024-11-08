@@ -1,0 +1,55 @@
+<!--(가은)임의로 생성한 write.ejs입니다-->
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>대진 On 정보-게시글 작성</title>
+        <link rel="stylesheet" type="text/css" href="/css/common.css">
+        <link rel="stylesheet" type="text/css" href="/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="/css/main_DJ.css">
+        <link rel="stylesheet" type="text/css" href="/css/sub.css">
+        <link rel="stylesheet" type="text/css" href="/css/swiper-bundle.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/slick.css">
+    </head>
+    <body>
+        <div class="wrap">
+            <header>
+                <!-- header 내용은 이전과 동일 -->
+            </header>
+
+            <main class="writeb">
+                <form action="/board/submit" method="POST">
+                    <table class="writet">
+                        <tr>
+                            <td class="w1">글 쓰기</td>
+                        </tr>
+                        <tr>
+                            <td class="w2">Title</td>
+                        </tr>
+                        <tr>
+                            <td class="w3"><input type="text" placeholder="제목을 입력하세요" name="title"></td>
+                        </tr>
+                        <tr>
+                            <td class="w4">Comment</td>
+                        </tr>
+                        <tr>
+                            <td class="w5">
+                                <textarea placeholder="내용을 입력하세요" name="detail"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="w6">
+                                <button type="submit" class="submit-button">등록</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </main>
+
+            <footer>
+                <!-- footer 내용은 이전과 동일 -->
+            </footer>
+        </div>
+    </body>
+</html>
